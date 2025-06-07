@@ -1,0 +1,553 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+:root {
+  --primary-color: #ff9e1f;
+  --secondary-color: #ffdb09;
+  --color-black: #1e1e1e;
+  --color-accent: rgba(38, 37, 37, 0.789);
+  --color-white: #fafafa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography start */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Chivo", sans-serif;
+}
+h2 {
+  font-size: 36px;
+}
+h3 {
+  font-size: 28px;
+}
+h4 {
+  font-size: 24px;
+}
+h5 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 16px;
+}
+
+a {
+  color: var(--color-white);
+}
+
+.notice {
+  position: fixed;
+  top: 10px;
+ left: -300px;
+  background: #ffcc00;
+  color: #000;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  animation: moveLeft 5s linear infinite;
+}
+
+@keyframes moveLeft {
+  0% {
+    left: -300px;
+  }
+  50% {
+    left: 50%;
+    transform: translateX(50%);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(100%);
+  }
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+/* Typography end */
+
+/* Basic Styles Start */
+button,
+.btn {
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 7px;
+  width: fit-content;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  color: black;
+}
+
+/* Basic Styles End */
+
+nav,
+section {
+  padding: 16px 160px;
+  margin-bottom: 48px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h3 {
+  color: var(--primary-color);
+  font-size: 32px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+}
+
+nav ul a {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+#hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80vh;
+  gap: 16px;
+}
+
+.hero-image {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border: 5px solid var(--primary-color);
+  border-radius: 50%;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-text h2 {
+  color: var(--primary-color);
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.hero-text span {
+  font-weight: 500;
+}
+
+.hero-text span,
+.hero-desc {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.hero-desc {
+  max-width: 600px;
+}
+
+/* Project Section Start */
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+p.sub-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-white);
+  opacity: 0.9;
+}
+
+.project-card {
+  border: 2px solid var(--color-accent);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.project-image {
+  overflow: hidden;
+  width: 100%;
+}
+
+.project-card img {
+  width: 100%;
+  object-fit: cover;
+  height: 300px;
+  transition: 0.3s all ease-in-out;
+}
+
+.project-card .card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px 14px;
+}
+
+.project-card p.card-description {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.project-card a {
+  text-decoration: none;
+  font-size: 18px;
+  background-color: var(--color-accent);
+  width: fit-content;
+  padding: 3px;
+  font-family: "Chivo", sans-serif;
+  border-radius: 2px;
+  color: var(--secondary-color);
+  box-shadow: 10px 0 0 inset var(--color-accent);
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Project Section End */
+
+/* About section start */
+section#about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: red; */
+}
+
+#about .details {
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 600px;
+}
+
+#about .about-img {
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border: 5px solid var(--primary-color);
+}
+
+#about .social-links {
+  display: flex;
+  gap: 8px;
+}
+
+#about .social-links img {
+  width: 36px;
+}
+
+/* About section End */
+
+/* Contact Section Start */
+section#contact form {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+section#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+section#contact form .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+section#contact label {
+  font-size: 18px;
+}
+
+input,
+textarea {
+  border: 1px solid rgb(211, 211, 211);
+  background-color: transparent;
+  outline: none;
+  font-size: 16px;
+  padding: 8px 16px;
+  width: 300px;
+  color: var(--color-white);
+}
+
+input::placeholder {
+  color: var(--color-white);
+}
+
+textarea {
+  resize: none;
+}
+
+section#contact form button {
+  font-size: 16px;
+}
+
+/* Contact Section End */
+
+/* Footer Section Start */
+section#footer {
+  margin-bottom: 10px;
+}
+/* Footer Section End */
+
+/* Media Queries */
+@media (max-width: 1280px) {
+  nav,
+  section {
+    padding-inline: 24px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+  p {
+    font-size: 14px;
+  }
+
+  .hero-text span,
+  .hero-desc {
+    font-size: 14px;
+  }
+
+  .hero-desc {
+    max-width: 400px;
+  }
+
+  .hero-image {
+    height: 300px;
+    width: 300px;
+  }
+
+  #hero {
+    min-height: 60vh;
+  }
+
+  .project-list {
+    grid-template-columns: repeat(2, 300px);
+    place-content: center;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 300px;
+  background-color: var(--primary-color);
+  padding: 24px 48px;
+  z-index: 999;
+  display: none;
+}
+
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+}
+
+.sidebar-menu {
+  position: relative;
+  width: 100%;
+}
+
+.sidebar .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+}
+
+@media (max-width: 680px) {
+  .project-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+  }
+}
+
+.active {
+  display: flex;
+}
+
+/* styles.css */
+.logo {
+  width: 90px;     /* Set desired width */
+  height: auto;     /* Maintain aspect ratio */
+  display: block;   /* Remove inline spacing */
+}
+.logo {
+  max-width: 100px;
+  height: auto;
+}
+/* Footer styling */
+#footer {
+  background-color:   #ff9e1f;   /* Light gray background */
+  padding: 20px;
+  text-align: center;          /* Center the text */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  border-top: 1px solid #ccc;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Optional: Add spacing around the text */
+#footer p {
+  margin: 0;
+}
+
+/*soft skill css*/
+:root {
+            --primary: #2563eb;
+            --secondary: #4f46e5;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+        }
+        
+        .skills-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 1rem;
+    width: 100%;
+    max-width: 480px;
+    transform: translateX(150px); /* Adjust this value as needed */
+}
+        
+        h1 {
+            color: var(--dark);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+        
+        .skill-pair {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill {
+            width: 48%;
+        }
+        
+        .skill-name {
+            font-weight: 500;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+        
+        .percentage {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.025em;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress {
+            height: 100%;
+            border-radius: 4px;
+            position: relative;
+            transition: width 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        
+        .progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+            animation: shine 2s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .communication .progress { background-color: var(--primary); width: 95%; }
+        .teamwork .progress { background-color: var(--success); width: 75%; }
+        .creativity .progress { background-color: var(--secondary); width: 86%; }
+        .project-management .progress { background-color: var(--warning); width: 60%; }
