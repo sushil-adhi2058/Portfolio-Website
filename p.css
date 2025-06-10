@@ -440,114 +440,30 @@ section#footer {
   max-width: 100px;
   height: auto;
 }
-/* Footer styling */
 #footer {
-  background-color:   #ff9e1f;   /* Light gray background */
+  background-color: #ff9e1f;
   padding: 20px;
-  text-align: center;          /* Center the text */
+  text-align: center;
   font-family: Arial, sans-serif;
   font-size: 16px;
   color: #333;
   border-top: 1px solid #ccc;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+
+  width:100%;
+                /* Full viewport width */
+  box-sizing: border-box;    /* Includes padding in width */
 }
 
 /* Optional: Add spacing around the text */
 #footer p {
   margin: 0;
+  word-wrap: break-word;     /* Ensure long text wraps on small screens */
 }
 
-/*soft skill css*/
-:root {
-            --primary: #2563eb;
-            --secondary: #4f46e5;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --light: #f8fafc;
-            --dark: #1e293b;
-            --gray: #64748b;
-        }
-        
-        .skills-container {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    padding: 1rem;
-    width: 100%;
-    max-width: 480px;
-    transform: translateX(150px); /* Adjust this value as needed */
+/* Responsive adjustment for small screens */
+@media screen and (max-width: 600px) {
+  #footer {
+    font-size: 14px;
+    padding: 15px;
+  }
 }
-        
-        h1 {
-            color: var(--dark);
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-            font-weight: 600;
-            letter-spacing: -0.025em;
-        }
-        
-        .skill-pair {
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .skill {
-            width: 48%;
-        }
-        
-        .skill-name {
-            font-weight: 500;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-            font-size: 0.875rem;
-        }
-        
-        .percentage {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.025em;
-        }
-        
-        .progress-bar {
-            height: 8px;
-            background-color: #e2e8f0;
-            border-radius: 4px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .progress {
-            height: 100%;
-            border-radius: 4px;
-            position: relative;
-            transition: width 0.8s cubic-bezier(0.65, 0, 0.35, 1);
-        }
-        
-        .progress::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.8), rgba(255,255,255,0.2));
-            animation: shine 2s infinite;
-        }
-        
-        @keyframes shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        .communication .progress { background-color: var(--primary); width: 95%; }
-        .teamwork .progress { background-color: var(--success); width: 75%; }
-        .creativity .progress { background-color: var(--secondary); width: 86%; }
-        .project-management .progress { background-color: var(--warning); width: 60%; }
